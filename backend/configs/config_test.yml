@@ -1,0 +1,23 @@
+# 调试模式
+AppDebug: true
+
+# 服务配置
+Server:
+  Bind: :30000
+
+# 日志配置
+Logs:
+  # 设置dev-tools接口访问日志
+  DatacenterLogFile: /logs/dev-tools.log
+  # 记录日志格式，参数选项：console，json；默认为console
+  TextFormat: json
+  # 记录日志时间精度，参数选项：s，ms；默认为s
+  TimePrecision: ms
+  # 单个日志文件最大大小（MB）
+  MaxSize: 1024
+  # 保留旧日志的个数
+  MaxBackups: 10
+  # 保留旧日志的天数
+  MaxAge: 60
+  # 日志备份时是否进行压缩
+  Compress: true
