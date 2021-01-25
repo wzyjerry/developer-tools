@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"aminer.cn/devTools/internal/modules"
-	ToolService "aminer.cn/devTools/internal/modules/tool/service"
+	"aminer.cn/developerTools/internal/modules"
+	ToolService "aminer.cn/developerTools/internal/modules/tool/service"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/mgo.v2/bson"
 	"net/http"

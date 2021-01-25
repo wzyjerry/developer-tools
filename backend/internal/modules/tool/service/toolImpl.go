@@ -2,7 +2,7 @@ package service
 
 import (
 	"aminer.cn/crypt"
-	"aminer.cn/devTools/internal/modules"
+	"aminer.cn/developerTools/internal/modules"
 	"github.com/google/uuid"
 	"gopkg.in/mgo.v2/bson"
 )

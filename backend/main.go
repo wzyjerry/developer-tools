@@ -1,9 +1,9 @@
 package main
 
 import (
-	_ "aminer.cn/devTools/docs"
-	"aminer.cn/devTools/internal/global/variables"
-	ToolController "aminer.cn/devTools/internal/modules/tool/controller"
+	_ "aminer.cn/developerTools/docs"
+	"aminer.cn/developerTools/internal/global/variables"
+	ToolController "aminer.cn/developerTools/internal/modules/tool/controller"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/files"

@@ -1,6 +1,6 @@
 package service
 
-import "aminer.cn/devTools/internal/modules"
+import "aminer.cn/developerTools/internal/modules"
 
 type ToolsService interface {
 	UUID(size uint) []string
