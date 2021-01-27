@@ -7,7 +7,7 @@ declare namespace Tool {
   }
   export type ViewObjectIdViewModel = {
     counter: number;
-    machine: number[];
+    machine?: number[];
     pid: number;
     time: string;
   };
