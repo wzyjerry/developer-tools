@@ -1,20 +1,20 @@
-import React, {useState} from "react";
-import {useIntl} from "umi";
-import {Button, Card, Divider, Form, Input} from "antd";
-import { ObjectID } from 'bson'
-import moment from 'moment'
+import React, { useState } from 'react';
+import { useIntl } from 'umi';
+import { Button, Card, Divider, Form, Input } from 'antd';
+import { ObjectID } from 'bson';
+import moment from 'moment';
 
 const PageCrypt: React.FC = () => {
-  const [info, setInfo] = useState({} as Tool.ViewObjectIdViewModel)
+  const [info, setInfo] = useState({} as Tool.ViewObjectIdViewModel);
   const [form] = Form.useForm();
   const intl = useIntl();
 
   const view = async (model: Tool.ViewObjectIdBindingModel) => {
-    const { objectId:objectIdStr } = model
-    const isValid = ObjectID.isValid(objectIdStr)
+    const { objectId: objectIdStr } = model;
+    const isValid = ObjectID.isValid(objectIdStr);
     if (isValid) {
-      const mongoObjectId = new ObjectID(objectIdStr)
-      const { id } = mongoObjectId
+      const mongoObjectId = new ObjectID(objectIdStr);
+      const { id } = mongoObjectId;
       /*
       const mbuffer = Buffer.alloc(3)
       mbuffer[0] = id.readUIntBE(4,1)
@@ -22,41 +22,35 @@ const PageCrypt: React.FC = () => {
       mbuffer[2] = id.readUIntBE(6,1)
       console.log('macheine code：',mbuffer.toString())
       */
-      const counter1 = id.readUIntBE(9,1) << 16
-      const counter2 = id.readUIntBE(10,1) << 8
-      const counter3 = id.readUIntBE(11,1)
-      
-      const result: Tool.ViewObjectIdViewModel = {
-        time:moment(mongoObjectId.getTimestamp()).format(),
-        pid: id.readUInt16BE(7),
-        counter: counter1 | counter2 | counter3
-      }
+      const counter1 = id.readUIntBE(9, 1) << 16;
+      const counter2 = id.readUIntBE(10, 1) << 8;
+      const counter3 = id.readUIntBE(11, 1);
 
-      setInfo(result)
+      const result: Tool.ViewObjectIdViewModel = {
+        time: moment(mongoObjectId.getTimestamp()).format(),
+        pid: id.readUInt16BE(7),
+        counter: counter1 | counter2 | counter3,
+      };
+
+      setInfo(result);
     }
-  }
+  };
   const onFinish = (values: any) => {
-    view(values as Tool.ViewObjectIdBindingModel).then()
+    view(values as Tool.ViewObjectIdBindingModel).then();
   };
   return (
     <>
-      <Form
-        name="crypt"
-        form={form}
-        onFinish={onFinish}
-      >
-        <Form.Item
-          name="objectId"
-        >
-          <Input placeholder={intl.formatMessage({id: 'pages.tools.objectId.objectId'})}/>
+      <Form name="crypt" form={form} onFinish={onFinish}>
+        <Form.Item name="objectId">
+          <Input placeholder={intl.formatMessage({ id: 'pages.tools.objectId.objectId' })} />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">
-            {intl.formatMessage({id: 'menu.objectId'})}
+            {intl.formatMessage({ id: 'menu.objectId' })}
           </Button>
         </Form.Item>
       </Form>
-      <Card style={{display: info.time ? 'block' : 'none'}}>
+      <Card style={{ display: info.time ? 'block' : 'none' }}>
         <Divider plain>Time</Divider>
         {info.time}
         <Divider plain>Machine</Divider>
@@ -68,6 +62,6 @@ const PageCrypt: React.FC = () => {
       </Card>
     </>
   );
-}
+};
 
 export default PageCrypt;
