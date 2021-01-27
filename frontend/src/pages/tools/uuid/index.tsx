@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from "react";
 import {useIntl} from "umi";
-import {Button, message, Table} from "antd";
-import {GenerateUUID} from "@/services/tools";
+import { Button, message, Table } from "antd";
+import {v4 as uuidv4} from 'uuid'
 import copy from 'copy-to-clipboard'
 import styles from './index.less';
 
@@ -43,20 +43,22 @@ const PageUUID: React.FC = () => {
     },
   ];
 
-  const generateUUID = async () => {
-    const uuids = await GenerateUUID()
-    const newData: UUID[] = []
-    uuids.forEach(uuid => {
-      newData.push({
-        uuid,
-        copied: false
-      })
-    })
+  const generateUUID = (size: number): string[] => {
+    return Array(size)
+      .fill(0)
+      .map(() => uuidv4())
+  }
+
+  const getUUIDList = () => {
+    const newData = generateUUID(10).map((uuid) => ({
+      uuid,
+      copied: false,
+    }));
     setData(newData)
   }
 
   useEffect(() => {
-    generateUUID().then()
+    getUUIDList()
   }, [])
 
   return (
@@ -68,7 +70,7 @@ const PageUUID: React.FC = () => {
         pagination={false}
         rowClassName={ (record: UUID) => record.copied? styles.uuidCopied:'' }
       />
-      <Button type="primary" onClick={generateUUID} style={{ marginTop: 16 }}>
+      <Button type="primary" onClick={getUUIDList} style={{ marginTop: 16 }}>
         {intl.formatMessage({id: 'menu.uuid'})}
       </Button>
     </>
