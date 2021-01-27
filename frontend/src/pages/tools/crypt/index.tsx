@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import {useIntl} from "umi";
 import {Button, Card, Form, Input, message} from "antd";
-import {Crypt} from "@/services/tools";
-import copy from 'copy-to-clipboard'
+import copy from 'copy-to-clipboard';
+import bcrypt from 'bcryptjs';
+
+const DEFAULT_COST = 10;
 
 const PageCrypt: React.FC = () => {
   const [hash, setHash] = useState('')
@@ -15,7 +17,8 @@ const PageCrypt: React.FC = () => {
   }
 
   const crypt = async (model: Tool.CryptBindingModel) => {
-    const result = await Crypt(model)
+    const { str } = model
+    const result = await bcrypt.hash(str, DEFAULT_COST)
     setHash(result)
   }
   const onFinish = (values: any) => {
