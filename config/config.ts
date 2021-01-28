@@ -9,6 +9,7 @@ const { REACT_APP_ENV } = process.env;
 export default defineConfig({
   hash: true,
   antd: {},
+  base: '/developer-tools',
   dva: {
     hmr: true,
   },
@@ -45,5 +46,5 @@ export default defineConfig({
     basePath: '/',
   },
   outputPath: 'docs',
-  publicPath: "/developer-tools/"
+  publicPath: '/developer-tools/',
 });
