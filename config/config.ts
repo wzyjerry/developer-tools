@@ -44,5 +44,6 @@ export default defineConfig({
   manifest: {
     basePath: '/',
   },
-  outputPath: 'docs'
+  outputPath: 'docs',
+  publicPath: "/developer-tools/"
 });
