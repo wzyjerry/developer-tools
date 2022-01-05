@@ -45,5 +45,6 @@ export default defineConfig({
     basePath: '/',
   },
   outputPath: 'docs',
+  base: "/developer-tools/",
   publicPath: "/developer-tools/"
 });
