@@ -41,10 +41,7 @@ export default defineConfig({
   title: false,
   ignoreMomentLocale: true,
   proxy: proxy[REACT_APP_ENV || 'dev'],
-  manifest: {
-    basePath: '/',
-  },
   outputPath: 'docs',
-  base: "/developer-tools/",
-  publicPath: "/developer-tools/"
+  base: '/developer-tools/',
+  publicPath: '/developer-tools/',
 });
