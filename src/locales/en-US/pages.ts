@@ -5,7 +5,16 @@ export default {
   'pages.tools.uuid.action.copy.message': 'UUID copied',
 
   'pages.tools.crypt.str': 'String',
-  'pages.tools.crypt.action.copy.message': 'Hash copied',
+  'pages.tools.crypt.action.copy.message': 'Result copied',
+
+  'pages.tools.crypt.src': 'The string to Base64 encode or decode',
+  'pages.tools.crypt.bcrypt': 'Bcrypt',
+  'pages.tools.crypt.base64Encode': 'Base64 Encode',
+  'pages.tools.crypt.base64Decode': 'Base64 Decode',
+  'pages.tools.crypt.urlEncode': 'URL Encode',
+  'pages.tools.crypt.urlDecode': 'URL Decode',
+  'pages.tools.crypt.swap': 'Swap',
+  'pages.tools.crypt.dest': 'Result',
 
   'pages.tools.objectId.objectId': 'ObjectId',
 

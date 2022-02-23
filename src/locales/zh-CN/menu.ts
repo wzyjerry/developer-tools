@@ -1,6 +1,6 @@
 export default {
   'menu.uuid': '生成UUID',
-  'menu.crypt': '加密字符串',
+  'menu.crypt': '编码解码',
   'menu.objectId': '查看ObjectId',
   'menu.qrcode': '生成二维码',
   'menu.json': '验证JSON',

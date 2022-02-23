@@ -1,6 +1,6 @@
 export default {
   'menu.uuid': 'Generate UUID',
-  'menu.crypt': 'Crypt string',
+  'menu.crypt': 'Decode&Encode',
   'menu.objectId': 'View ObjectId',
   'menu.qrcode': 'Generate QRCode',
   'menu.json': 'Validate JSON',

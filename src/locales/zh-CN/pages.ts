@@ -4,8 +4,16 @@ export default {
   'pages.tools.uuid.action': '操作',
   'pages.tools.uuid.action.copy.message': '已复制UUID',
 
-  'pages.tools.crypt.str': '字符串',
-  'pages.tools.crypt.action.copy.message': '已复制Hash',
+  'pages.tools.crypt.action.copy.message': '结果已复制',
+
+  'pages.tools.crypt.src': '要进行编码或解码的字符串',
+  'pages.tools.crypt.bcrypt': 'Bcrypt',
+  'pages.tools.crypt.base64Encode': 'Base64编码',
+  'pages.tools.crypt.base64Decode': 'Base64解码',
+  'pages.tools.crypt.urlEncode': 'URL编码',
+  'pages.tools.crypt.urlDecode': 'URL解码',
+  'pages.tools.crypt.swap': '交换',
+  'pages.tools.crypt.dest': '结果',
 
   'pages.tools.objectId.objectId': 'ObjectId',
 

@@ -1,7 +1,4 @@
 declare namespace Tool {
-  export type CryptBindingModel = {
-    str: string;
-  };
   export type ViewObjectIdBindingModel = {
     objectId: string;
   };
